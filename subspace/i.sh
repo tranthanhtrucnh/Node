@@ -18,6 +18,7 @@ echo -e "K:::::::K    K:::::K          CC:::::::::::::::C         D:::::::::::::
 echo -e "K:::::::K    K:::::K            CCC::::::::::::C         D::::::::::::DDD"     
 echo -e "KKKKKKKKK    KKKKKKK               CCCCCCCCCCCCC         DDDDDDDDDDDDD"  
 echo -e "\e[0m"
+echo " FROM KUB CAPITAL DAO"
 echo "========================================================================================="
 sleep 2
 exists()
@@ -84,3 +85,5 @@ sudo systemctl restart subspaced-farmer
 echo '=============== УСТАНОВКА ЗАВЕРШЕНА ==================='
 echo -e 'Проверка логов ноды: \e[1m\e[32mjournalctl -u subspaced -f -o cat \e[0m'
 echo -e 'Проверка логов фармера: \e[1m\e[32mdocker logs subspace-farmer-1 \e[0m'
+echo -e 'Рестарт ноды: \e[1m\e[32msudo systemctl restart subspaced \e[0m'
+echo -e 'Рестарт фармера: \e[1m\e[32msudo systemctl restart subspaced-farmer \e[0m'
