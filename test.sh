@@ -1,42 +1,8 @@
 #!/bin/bash
-echo "========================================================================================="
-echo -e "\033[0;35m"
-echo -e "KKKKKKKKK    KKKKKKK               CCCCCCCCCCCCC         DDDDDDDDDDDDD"        
-echo -e "K:::::::K    K:::::K            CCC::::::::::::C         D::::::::::::DDD"     
-echo -e "K:::::::K    K:::::K          CC:::::::::::::::C         D:::::::::::::::DD"   
-echo -e "K:::::::K   K::::::K         C:::::CCCCCCCC::::C         DDD:::::DDDDD:::::D"  
-echo -e "KK::::::K  K:::::KKK        C:::::C       CCCCCC           D:::::D    D:::::D" 
-echo -e "  K:::::K K:::::K          C:::::C                         D:::::D     D:::::D"
-echo -e "  K::::::K:::::K           C:::::C                         D:::::D     D:::::D"
-echo -e "  K:::::::::::K            C:::::C                         D:::::D     D:::::D"
-echo -e "  K:::::::::::K            C:::::C                         D:::::D     D:::::D"
-echo -e "  K::::::K:::::K           C:::::C                         D:::::D     D:::::D"
-echo -e "  K:::::K K:::::K          C:::::C                         D:::::D     D:::::D"
-echo -e "KK::::::K  K:::::KKK        C:::::C       CCCCCC           D:::::D    D:::::D" 
-echo -e "K:::::::K   K::::::K         C:::::CCCCCCCC::::C         DDD:::::DDDDD:::::D"  
-echo -e "K:::::::K    K:::::K          CC:::::::::::::::C         D:::::::::::::::DD"   
-echo -e "K:::::::K    K:::::K            CCC::::::::::::C         D::::::::::::DDD"     
-echo -e "KKKKKKKKK    KKKKKKK               CCCCCCCCCCCCC         DDDDDDDDDDDDD"  
-echo -e "\e[0m"
-echo " FROM KUB CAPITAL DAO"
-echo "========================================================================================="
-sleep 2
-exists()
-
-{
-  command -v "$1" >/dev/null 2>&1
-}
-if exists curl; then
-	echo ''
-else
-  sudo apt update && sudo apt upgrade -y && sudo apt install -y git binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev cmake gcc g++ python docker protobuf-compiler libssl-dev pkg-config clang llvm cargo awscli clang build-essential make  < "/dev/null"
-fi
-bash_profile=$HOME/.bash_profile
-if [ -f "$bash_profile" ]; then
-    . $HOME/.bash_profile
-fi
 
 cd ~
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y git binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev cmake gcc g++ python docker protobuf-compiler libssl-dev pkg-config clang llvm cargo awscli clang build-essential make
 sudo apt install python3-pip
 USER_BASE_BIN=$(python3 -m site --user-base)/bin
 export PATH="$USER_BASE_BIN:$PATH"
