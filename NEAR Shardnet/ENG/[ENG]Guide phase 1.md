@@ -55,11 +55,11 @@ We will show you on the example of (Hetzner)[https://www.hetzner.com/]
 
 2. Go to https://www.hetzner.com/ At the top of the site select Dedicated
 
-![img](./images/1.png)
+![img](./images/1.webp)
 
 3. Click on Server Finder and choose the server you like, but its specifications should not be below the recommended
 
-![img](./images/2.png)
+![img](./images/2.webp)
 
 
 Here we see that the second server with NVMe SSD fits our hardware requirement
@@ -69,12 +69,12 @@ Here we see that the second server with NVMe SSD fits our hardware requirement
 * We press on Order
 * We will be redirected on configuration of a server
 
-![img](./images/3.png)
+![img](./images/3.webp)
 
 Let's scroll down to selection of operating system
 
 
-![img](./images/4.png)
+![img](./images/4.webp)
 
 
 * Here we can choose if we want a new operating system or if we want to install a new one, we choose Rescue System
@@ -82,20 +82,20 @@ Let's scroll down to selection of operating system
 * We will be redirected to confirm the order
 
 
-![img](./images/5.png)
+![img](./images/5.webp)
 
 
 * Click Save
 
 
-![img](./images/6.png)
+![img](./images/6.webp)
 
 
 * Here we click on Checkout
 * And then comes the account login page
 
 
-![img](./images/7.png)
+![img](./images/7.webp)
 
 
 * Here we click on Register Now - if you do not have an account
@@ -103,39 +103,39 @@ Let's scroll down to selection of operating system
 
 Registration here is standard and not complicated
 
-![img](./images/8.png)
+![img](./images/8.webp)
 
 
 * Go to the mailbox
 
 
-![img](./images/9.png)
+![img](./images/9.webp)
 
 
 * Confirm registration
 * Input First Name and Surname
 
 
-![img](./images/10.png)
+![img](./images/10.webp)
 
 
 * Input Your contact information
 
 
-![img](./images/11.png)
+![img](./images/11.webp)
 
 
 * Next we need to choose our payment method
 
 
-![img](./images/12.png)
+![img](./images/12.webp)
 
 
 ## Now we just have to wait until the server appears in our personal cabinet
 Wait 1-10 minutes
 
 
-![img](./images/13.png)
+![img](./images/13.webp)
 
 
 Now when our server is displayed we can proceed to install the OS
@@ -151,7 +151,7 @@ We recommend distributions
 * Ubuntu 22.04 Lts base
 
 
-![img](./images/14.png)
+![img](./images/14.webp)
 
 
 # Step II - Create Shardner wallet
@@ -161,20 +161,20 @@ Opera, Mozilla, IE
 
 Go to [https://wallet.shardnet.near.org/] and create wallet choose your name and save seed phrase. This walled will be used to hold NEAR tokens.
 
-![img](./images/15.png)
+![img](./images/15.webp)
 
 
 
 Random name
 
 
-![img](./images/16.png)
+![img](./images/16.webp)
 
 
 And we have test 500 NEAR token
 
 
-![img](./images/17.png)
+![img](./images/17.webp)
 
 
 
@@ -240,7 +240,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 > Press 1 and press Enter
 
 
-![img](./images/18.png)
+![img](./images/18.webp)
 
 
 9. Setup environment for Rust.
@@ -265,7 +265,7 @@ We ready to execute some commands, let’s see how works.
 near validators current
 ```
 
-![img](./images/19.png)
+![img](./images/19.webp)
 
 
 
@@ -406,8 +406,9 @@ NEAR uses staking pools with a whitelisted staking contract to ensure delegator�
 
 ```
 near call factory.shardnet.near create_staking_pool '{"staking_pool_id": "<pool id>", "owner_id": "<accountId>", "stake_public_key": "<public key>", "reward_fee_fraction": {"numerator": 5, "denominator": 100}, "code_hash":"DD428g9eqLL8fWUxv8QSpVFzyHi1Qd16P8ephYCTmMSZ"}' --accountId="<accountId>" --amount=100 --gas=300000000000000 
-Let’s put our data and run command.
 ```
+Let’s put our data and run command.
+
 
 * Pool ID: walletname, the factory automatically adds its name to this parameter, creating {pool_id}.{staking_pool_factory}
 * Owner ID: walletname.shardnet.near
@@ -420,8 +421,9 @@ Let’s put our data and run command.
 Let’s change reward commission to 1-100%
 ```
 near call <pool_name> update_reward_fee_fraction '{"reward_fee_fraction": {"numerator": 1, "denominator": 100}}' --accountId <account_id> --gas=300000000000000
-In order to become validator we need NEAR on in our pool balance about seat price, let’s send 1000 NEAR.
 ```
+In order to become validator we need NEAR on in our pool balance about seat price, let’s send 1000 NEAR.
+
 ```
 near call <staking_pool_id> deposit_and_stake --amount <amount> --accountId <accountId> --gas=300000000000000
 ```
@@ -473,7 +475,7 @@ near view <staking_pool_id> get_account_unstaked_balance '{"account_id": "<accou
 * Available for Withdrawal
 You can only withdraw funds from a contract if they are unlocked.
 ```
-near view <staking_pool_id> is_account_unstaked_balance_available '{"account_id": "<accountId>"}'
+near view <staking_pool_id> get_account_unstaked_balance '{"account_id": "<accountId>"}'
 ```
 Pause / Resume Staking
 * Pause
@@ -515,6 +517,7 @@ crontab -l
 cat home/<USER_ID>/logs/all.log
 ```
 > And finally node became a validator!
+
 
 
 
